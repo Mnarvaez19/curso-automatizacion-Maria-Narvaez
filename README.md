@@ -5,3 +5,6 @@
 # instalacion 
 - pip install requerimientos.txt
 
+ 
+# Comando para ejecutar las pruebas 
+- pytest -v

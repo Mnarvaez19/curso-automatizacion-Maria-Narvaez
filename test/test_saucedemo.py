@@ -26,6 +26,13 @@ def test_catalogo_productos( driver: WebDriver ):
     nombre = productos[0].find_element(By.CLASS_NAME, "inventory_item_name").text
     assert nombre == "Sauce Labs Backpack"
 
+    # Verificar visibilidad de Menú y Filtro
+    menu = driver.find_element(By.ID, "react-burger-menu-btn")
+    filtro = driver.find_element(By.CLASS_NAME, "product_sort_container")
+        
+    assert menu.is_displayed()
+    assert filtro.is_displayed()
+
 def test_agregar_al_carrito( driver: WebDriver ):
     login(driver , "standard_user", "secret_sauce")
     wait = WebDriverWait(driver , 10)
